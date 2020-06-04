@@ -1,0 +1,30 @@
+<div class="row">
+    <div class="col-md-12 pad-10">
+      <button type="submit" class="btn btn-primary" (click)="goToAddBoss()">
+        <span class="glyphicon glyphicon-floppy-disk"></span> Ajout Boss
+      </button>
+    </div>
+  </div>
+  
+  <table class="table table-striped">
+    <thead>
+    <tr>
+      <th>ID</th>
+      <th>NomEn</th>
+      <th>NomFR</th>
+      <th>Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let boss of bosses$| async;">
+      <td>{{ boss.id }}</td>
+      <td>{{ boss.NomEn }}</td>
+      <td>{{ boss.NomFR }}</td>
+      <td>
+        <div>
+          <button class="btn" (click)="deleteBoss(boss.id)">Supprimer</button>
+        </div>
+      </td>
+    </tr>
+    </tbody>
+  </table>

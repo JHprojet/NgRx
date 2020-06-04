@@ -1,0 +1,23 @@
+<div class="form-horizontal pad-10">
+    <br>
+    <form [formGroup]="bossForm">
+      <div class="col-md-6 form-group">
+        <label class=" control-label">Nom EN</label>
+        <div class="col-md-12 no-padding">
+          <input name="NomEN" id="NomEN" formControlName="NomEN" class="form-control" placeholder="" type="text" />
+        </div>
+      </div>
+      <div class="col-md-6 form-group">
+        <label class=" control-label">Nom FR</label>
+        <div class="col-md-12 no-padding">
+          <input name="NomFR" id="NomFR" formControlName="NomFR" class="form-control" placeholder="" type="text" />
+        </div>
+      </div>
+      <div class="pad-10">
+        <button (click)="createBoss(bossForm.value)"
+                type="submit" class="btn btn-save btn-primary" [disabled]="!bossForm.valid">
+          <span class="glyphicon glyphicon-floppy-disk"></span> Sauvegarder
+        </button>
+      </div>
+    </form>
+  </div>
