@@ -19,7 +19,7 @@ export class AppComponent implements OnInit {
 
 
   GetAnonymeToken() {
-    return this.http.get('http://localhost:44312/Login', this.Header())
+    return this.http.get('http://localhost:65066/API/Login', this.Header())
   }
   /** Get Anonymous token and set session */
   getAnonymeKey()

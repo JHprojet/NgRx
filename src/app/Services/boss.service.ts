@@ -1,8 +1,7 @@
 import {Injectable, Inject} from "@angular/core";
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Observable, throwError } from 'rxjs';
+import { Observable } from 'rxjs';
 import { Boss } from "./boss.interface";
-import { environment } from './environnement';
 import { StorageService, SESSION_STORAGE } from 'ngx-webstorage-service';
   
 @Injectable()
@@ -15,7 +14,7 @@ export class BossService {
   * @returns Observable<Boss[]>
   */
   getBosses(): Observable<Boss[]> {
-    return this.http.get<Boss[]>('http://localhost:44312/Boss', this.Header())
+    return this.http.get<Boss[]>('http://localhost:65066/API/Boss', this.Header())
   }
   /**
   * Call to API to post a new boss
@@ -23,7 +22,7 @@ export class BossService {
   * @returns Observable<Boss>
   */
   createBoss(Boss: Boss): Observable<Boss> {
-    return this.http.post<Boss>('http://localhost:44312/Boss', Boss, this.Header())
+    return this.http.post<Boss>('http://localhost:65066/API/Boss', Boss, this.Header())
   }
   /**
   * Call to API to delete an existing boss
@@ -31,7 +30,7 @@ export class BossService {
   * @returns Observable<Boss>
   */
   deleteBoss(id: number): Observable<number> {
-    return this.http.delete<number>('http://localhost:44312/Boss/'+id, this.Header())
+    return this.http.delete<number>('http://localhost:65066/API/Boss/'+id, this.Header())
   }
 
   private Header() {

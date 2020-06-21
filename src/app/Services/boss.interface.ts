@@ -1,8 +1,8 @@
 //Interface Object Boss
 
-export interface Boss {
+export class Boss {
     Id: number;
-    NomFR: string;
-    NomEN: string;
-    Actif: number;
+    NameFR: string;
+    NameEN: string;
+    Active: number;
 }

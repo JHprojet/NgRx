@@ -13,8 +13,14 @@ export interface BossListStateEntity extends EntityState<Boss> {
   };
 }
 
+export function selectBossId(a: Boss): number {
+  //In this case this would be optional since primary key is id
+  return a.Id;
+}
+
 //Création de l'Entity permettant de lier la variable bosses avec son EntityState
 export const BossListAdapter: EntityAdapter<Boss> = createEntityAdapter<Boss>({
+  selectId: selectBossId,
   sortComparer: false
 });
 

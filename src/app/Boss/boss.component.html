@@ -9,20 +9,20 @@
   <table class="table table-striped">
     <thead>
     <tr>
-      <th>ID</th>
-      <th>NomEn</th>
-      <th>NomFR</th>
+      <th>Id</th>
+      <th>NameEN</th>
+      <th>NameFR</th>
       <th>Actions</th>
     </tr>
     </thead>
     <tbody>
     <tr *ngFor="let boss of bosses$| async;">
-      <td>{{ boss.id }}</td>
-      <td>{{ boss.NomEn }}</td>
-      <td>{{ boss.NomFR }}</td>
+      <td>{{ boss.Id }}</td>
+      <td>{{ boss.NameEN }}</td>
+      <td>{{ boss.NameFR }}</td>
       <td>
         <div>
-          <button class="btn" (click)="deleteBoss(boss.id)">Supprimer</button>
+          <button class="btn" (click)="deleteBoss(boss.Id)">Supprimer</button>
         </div>
       </td>
     </tr>
